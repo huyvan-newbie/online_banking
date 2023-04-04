@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+
+<body>
+<div class="container" style="float: left">
+    <div class="loginImg">
+    </div>
+</div>
+
+<div style="float: left">
+    <p id="welcomeToFit">Welcome to FIT</p>
+    <div th:if="${#request.getParameter('error') == 'true'}"
+         style="color:red;margin:10px 0px;">
+        Login Failed!!!<br/>
+        Reason :
+        <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+              th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+
+    </div>
+</div>
+<form class="form" name='login' th:action="@{/login}" method='POST'>
+    <table>
+        <tr>
+            <td><input id="phoneNumBox" type='text' placeholder="User name" name='username' value=''></td>
+        </tr>
+
+        <tr>
+            <td><input id="passwordBox" type='password' placeholder="Password" name='password' value=''/></td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn-area">
+                    <button id="loginBtn" type='submit' name='submit'>Login</button>
+                    <button id="registerBtn" type='button' onclick="register(event)">Register</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    function register(e) {
+        e.preventDefault();
+        document.location.href = '/register';
+    }
+</script>
+</body>
+</html>

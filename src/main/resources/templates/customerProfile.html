@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Profile</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/customer-profile.css}" href="/css/customer-profile.css"/>
+</head>
+
+<body>
+<div class="container">
+
+    <!--    <h1>Customer Profile</h1>-->
+
+    <div class="col">
+        <div class="customer-avatar">
+        </div>
+
+        <tr>
+            <!--            <td class="type-name">Tên người dùng</td>-->
+            <!--            <td>:</td>-->
+            <td>
+                <h1 th:text="${user.fullName}"/>
+            </td>
+        </tr>
+
+        <div class="table">
+            <tr>
+                <td class="type-name">ID</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.id}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="type-name">Phone Number</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.phoneNumber}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="type-name">Email</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.email}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="type-name">SSN</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.ssn}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="type-name">Street Address</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.streetAddress}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="type-name">City</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.city}"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="type-name">District</td>
+                <td>:</td>
+                <td>
+                    <p class="info" th:text="${user.district}"/>
+                </td>
+            </tr>
+        </div>
+    </div>
+</div>
+</body>
+</html>

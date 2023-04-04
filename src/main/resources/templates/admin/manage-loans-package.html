@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #manage-loans-package-static-resources},
+                                                ~{:: #manage-loans-package-nav},
+                                                ~{:: #manage-loans-package-main-content},
+                                                ~{:: #manage-loans-package-footer}
+                                               )}">
+
+<head>
+    <title>Admin Page</title>
+    <th:block id="manage-loans-package-static-resources">
+        <!--        <link rel="stylesheet" type="text/css" href="/css/admin.css" th:href="@{/css/admin.css}"/>-->
+    </th:block>
+</head>
+<body>
+<div id="manage-loans-package-nav" th:replace="~{/fragments/admin-menu :: nav-admin}">
+    Admin Nav
+</div>
+<div class="container" id="manage-loans-package-main-content">
+    <div class="row">
+        <div class="col-lg-10 mt-5 mb-5">
+            <h3>Datatable using list of Objects in data parameter</h3>
+            <table id="manage-loans-package-table" class="table table-bordered table-responsive" style="width: 100%">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Duration</th>
+                    <th>Interest Rate</th>
+                    <th>#</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/manage-loans-package.js" th:src="@{/js/manage-loans-package.js}"></script>
+</div>
+</body>
+</html>

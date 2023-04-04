@@ -1,0 +1,50 @@
+body {
+    font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+    background-color: #f9f5fa;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    cursor: default;
+}
+
+.container {
+    display: block;
+    background-color: white;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30em;
+    border: none;
+}
+
+.customer-avatar {
+    display: flex;
+    background-image: url("../images/userAvatar.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    padding: 4em 4em 5em 4em;
+    width: 20px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 40px auto;
+    font-size: 32px;
+}
+
+.table {
+    margin: 0 5px 0 5px;
+}
+
+.info {
+    font-weight: normal;
+    margin: 10px -2px 10px -2px;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+
+

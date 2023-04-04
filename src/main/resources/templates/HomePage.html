@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="/css/homepage.css" th:href="@{/css/homepage.css}"/>
+</head>
+
+<body>
+<div>
+    <form style="float: right;
+                         margin: 15px 60px 15px 15px;"
+          th:action="@{/register}" method="POST">
+        <p>
+            <input id="registerBtn" type="submit" value="Register"/>
+        </p>
+    </form>
+
+    <form style="float: right;
+                         margin: 15px 5px 15px 15px;"
+          th:action="@{/login}" method="POST">
+        <p>
+            <input id="loginBtn" type="submit" value="Login"/>
+        </p>
+    </form>
+    <form style="float: right;
+                         margin: 15px 5px 15px 15px;"
+          th:action="@{/logout}" method="POST">
+        <p>
+            <input id="" type="submit" value="Logout"/>
+        </p>
+    </form>
+
+</div>
+
+<div>
+    <a style="color: aliceblue;" th:text="'Hello ' + ${currentUser.username}"></a>
+</div>
+<div class="fitICO">
+    <a id="fitSmart">FIT SMART BANKING</a>
+    <a id="ico">ICO</a>
+</div>
+
+<div>
+    <p id="greeting">New generation digital banking service of FIT</p>
+</div>
+
+<div>
+    <form style="float: left;"
+          th:action="@{/register}" method="POST">
+        <p>
+            <input id="signUpBtn" type="submit" value="Sign Up Now →"/>
+        </p>
+    </form>
+</div>
+</body>
+</html>

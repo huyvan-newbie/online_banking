@@ -1,0 +1,82 @@
+html {
+    background-image: url("../images/HomeNoText.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+#registerBtn {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #00cb1e;
+}
+
+#registerBtn:hover {
+    transition-duration: 0.4s;
+    background-color: #05F63A;
+}
+
+#loginBtn {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: azure;
+    padding: 10px 15px 10px 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+}
+
+#loginBtn:hover {
+    transition-duration: 0.4s;
+    color: #ffffff;
+}
+
+.fitICO {
+    float: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 32px 15px 15px 60px;
+}
+
+#fitSmart {
+    color: aliceblue;
+}
+
+#ico {
+    color: #05F63A;
+}
+
+#greeting {
+    float: left;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: aliceblue;
+    line-height: 1.5;
+    width: 55%;
+    margin: 220px 0 0 -240px;
+}
+
+#signUpBtn {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #00cb1e;
+    margin: 22em 0 0 -40em;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+}
+
+#signUpBtn:hover {
+    transition-duration: 0.4s;
+    color: #05F63A;
+}

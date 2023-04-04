@@ -1,0 +1,41 @@
+body {
+    font-family: open sans, helvetica neue, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f5fa;
+    cursor: default;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 500px;
+    border-radius: 10px;
+    border: solid 1px lightgray;
+}
+
+.headingImg {
+    display: block;
+    background-image: url("../images/viewBalance.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5em 0 5em 5em;
+    margin: 0 auto 0 auto;
+    width: 5em;
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 10px 0 40px 0;
+}
+
+.col {
+    text-align: left;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+}

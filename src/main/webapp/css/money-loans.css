@@ -1,0 +1,13 @@
+body{
+    width: 100%;
+}
+.loanParent{
+    display: flex;
+    float: right;
+    margin-right: 10px;
+}
+
+.loanElement{
+    padding: 5px;
+    border: 2px solid #08020E;
+}

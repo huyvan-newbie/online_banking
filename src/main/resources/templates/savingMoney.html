@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #saving-money-resources},
+                                                ~{:: #saving-money-nav},
+                                                ~{:: #saving-money},
+                                                ~{:: #saving-money-footer}
+                                               )}">
+<meta charset="UTF-8">
+<title>Saving Money</title>
+<th:block id="saving-money-resources">
+    <script type="text/javascript" src="/js/saving-money.js"
+            th:src="@{/js/saving-money.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/saving-money.css}"
+          href="/css/saving-money.css"/>
+</th:block>
+</head>
+<body>
+<div id="saving-money" class="main-container container text-center">
+    <!--        Header-->
+    <div class="headingImg">
+    </div>
+
+    <div>
+        <h1>Saving</h1>
+    </div>
+
+    <!--        Hiện loans đã đăng ký-->
+
+    <div>
+        <h3 id="savingHistoryText">Transaction history</h3>
+    </div>
+
+    <div class="savingHistory">
+        <div class="loanParent" th:each="savingList : ${savingsList}">
+            <div class="loanElement">
+                <div th:text="'Saving Package ID: ' + ${savingList.savingPackageId}"></div>
+                <div th:text="'Saving Amount Taken: ' + ${savingList.savingAmountTaken} + '$'"></div>
+                <div th:text="'Saving Amount Profit: ' + ${savingList.savingAmounProfit} + '$'"></div>
+                <div th:text="'Registation Day: ' + ${savingList.registrationDate}"></div>
+                <div th:text="'Status: ' + ${savingList.status}"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--        Hiệu lên các loansPackage của ngân hàng -->
+    <form onsubmit="submitForm(event)">
+        <table>
+            <tr>
+                <input class="form-control" id="passwordBox" type='text' placeholder="Amount" name='amount'
+                       value=''/>
+            </tr>
+
+            <div class="savingPackages">
+                <tr class="loanParent" th:each="savingPackage : ${savingsPackage}">
+                    <div th:onclick="doSomething([[${savingPackage.id}]])" class="loanElement">
+                        <div th:text="'Loams Package ID: ' + ${savingPackage.id}"></div>
+                        <div th:text="'Interest Rate: ' + ${savingPackage.interestRate} + '%'"></div>
+                        <div th:text="'Duration: ' + ${savingPackage.duration} + ' months'"></div>
+                    </div>
+                </tr>
+            </div>
+
+            <tr>
+                <div id="savingPackageId" th:text="'Saving Package ID: '"></div>
+                <input class="form-control" id="id" type="text" placeholder="ID" name="savingPackageID" value=''
+                       readonly>
+            </tr>
+        </table>
+
+        <tr>
+            <td>
+                <input class="btn btn-success" id="loginBtn" type="submit" name='submit' value='Confirm'/>
+            </td>
+        </tr>
+    </form>
+
+
+</div>
+
+
+<script>
+
+    doSomething = (id) => {
+        document.getElementById('savingPackageId').innerText = 'Saving Package ID: ';
+        console.log(document.getElementById('id'))
+        document.getElementById('id').value = id;
+    }
+</script>
+</body>
+
+</html>

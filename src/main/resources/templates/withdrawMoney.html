@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #withdraw-money-resources},
+                                                ~{:: #withdraw-money-nav},
+                                                ~{:: #withdraw-money-main-content},
+                                                ~{:: #withdraw-money-footer}
+                                               )}">
+<head>
+    <title>Withdraw Money</title>
+    <th:block id="withdraw-money-resources">
+        <script type="text/javascript" src="/js/withdraw-money.js" th:src="@{/js/withdraw-money.js}"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/withdraw-money.css}" href="/css/withdraw-money.css"/>
+    </th:block>
+</head>
+<body>
+<div id="withdraw-money-main-content" class="container text-center">
+    <div class="headingImg">
+    </div>
+
+    <h1>WithDraw</h1>
+    <div class="col">
+        <h3 th:text="'Account Number: ' + ${account.accountNumber}"/>
+        <h3 th:text="'Balance: ' + ${account.currentBalance} + ' vnđ'"/>
+    </div>
+
+    <form class="submit-form" onsubmit="submitForm(event)">
+        <table>
+            <tr>
+                <td class="type-name">Amount</td>
+                <td>:</td>
+                <td><input class="form-control" name="amount" type="text"></td>
+            </tr>
+        </table>
+
+        <tr>
+            <td>
+                <button type="submit" class="btn btn-success">Withdraw</button>
+            </td>
+        </tr>
+    </form>
+</div>
+</body>
+</html>

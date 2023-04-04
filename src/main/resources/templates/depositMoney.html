@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #deposit-money-resources},
+                                                ~{:: #deposit-money-nav},
+                                                ~{:: #deposit-money-main-content},
+                                                ~{:: #deposit-money-footer}
+                                               )}">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit Money</title>
+    <th:block id="deposit-money-resources">
+        <script type="text/javascript" src="/js/deposit-money.js" th:src="@{/js/deposit-money.js}"></script>
+        <link rel="stylesheet" type="text/css" href="/css/deposit-money.css" th:href="@{/css/deposit-money.css}"/>
+    </th:block>
+
+</head>
+
+<body>
+<div class="container text-center" id="deposit-money-main-content">
+    <div class="headingImg">
+    </div>
+
+    <h1 class="headingText">Deposit</h1>
+
+    <div class="col">
+        <h3 th:text="'Account Number: ' + ${account1.accountNumber}"></h3>
+        <h3 th:text="'Balance: ' + ${account1.currentBalance} + ' vnđ'"></h3>
+    </div>
+
+    <form onsubmit="submitForm(event)">
+        <table>
+            <tr>
+                <td class="type-name">Amount</td>
+                <td>:</td>
+                <td><input class="form-control" id="amount" name="amount" type="text"></td>
+            </tr>
+        </table>
+        <br>
+        <tr>
+            <td>
+                <button type="submit" class="btn btn-success">Deposit</button>
+            </td>
+        </tr>
+    </form>
+
+</div>
+</body>
+</html>

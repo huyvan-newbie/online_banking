@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #transfer-static-resources},
+                                                ~{:: #transfer-nav},
+                                                ~{:: #transfer-main-content},
+                                                ~{:: #transfer-footer}
+                                               )}">
+<head>
+    <title>Transfer Transaction</title>
+    <th:block id="transfer-static-resources">
+        <script type="text/javascript" src="/js/transfer-transaction.js"
+                th:src="@{/js/transfer-transaction.js}"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/transfer-transaction.css}"
+              href="/css/transfer-transaction.css"/>
+    </th:block>
+</head>
+
+<body>
+<div id="transfer-main-content" class="container text-center">
+    <div class="headingImg">
+    </div>
+
+    <h1 class="headingText">Transfer</h1>
+
+    <div class="col">
+        <h3 th:text="'Account Number: ' + ${account.accountNumber}"/>
+        <h3 th:text="'Balance: ' + ${account.currentBalance} + ' vnđ'"/>
+    </div>
+
+    <form onsubmit="submitForm(event)">
+        <table>
+            <tr>
+                <td class="type-name">Bank Name</td>
+                <td>:</td>
+                <td>
+                    <select name="bankReceiveId" class="form-control">
+                        <option value=""></option>
+                        <option th:each="bank : ${bankList}" th:value="${bank.id}" th:text="${bank.bankName}">
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="type-name">Account Number</td>
+                <td>:</td>
+                <td><input class="form-control" id='accountNumber' type='text' name='accountNumber' value=''></td>
+            </tr>
+
+            <tr>
+                <td class="type-name">Amount</td>
+                <td>:</td>
+                <td><input class="form-control" id='amount' name="amount" type="text"></td>
+            </tr>
+
+            <tr>
+                <td class="type-name">Description</td>
+                <td>:</td>
+                <td><input class="form-control" id='description' name="description" type="text"></td>
+            </tr>
+        </table>
+
+        <tr>
+            <td>
+                <button type="submit" class="btn btn-success">Transfer</button>
+            </td>
+        </tr>
+    </form>
+</div>
+</body>
+</html>

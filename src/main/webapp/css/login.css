@@ -1,0 +1,89 @@
+html {
+    background-color: white;
+    background-repeat: no-repeat;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.loginImg {
+    background-image: url("../images/loginCrop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 18em;
+    margin: 6em 5em 0 0;
+    border-radius: 2em;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+.form {
+    float: left;
+    margin: 18em 0 0 -22em;
+}
+
+#phoneNumBox, #passwordBox {
+    font-family: sans-serif;
+    font-size: 15px;
+    width: 290px;
+    padding: 1em 1em 1em 1em;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/*#loginBtn {*/
+/*    font-family: sans-serif;*/
+/*    font-weight: bold;*/
+/*    font-size: 19px;*/
+/*    color: white;*/
+/*    padding: 9px 21px 9px 21px;*/
+/*    border-radius: 10px;*/
+/*    border: none;*/
+/*    background-color: darkturquoise;*/
+/*}*/
+
+/*#loginBtn:hover {*/
+/*    transition-duration: 0.4s;*/
+/*    background-color: #4CAF50;*/
+/*    color: floralwhite;*/
+/*    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);*/
+/*}*/
+
+#welcomeToFit {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 3em 0 0 0;
+}
+
+.btn-area {
+    width: 290px;
+    text-align: center;
+}
+
+button {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    color: white;
+    padding: 9px 21px 9px 21px;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover {
+    transition-duration: 0.4s;
+    background-color: #4CAF50;
+    color: floralwhite;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+#loginBtn {
+    background-color: darkturquoise;
+    margin-left: 40px;
+}
+
+#registerBtn {
+    background-color: blueviolet;
+}

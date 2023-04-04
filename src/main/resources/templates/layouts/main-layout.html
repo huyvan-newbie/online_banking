@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="main-fragment (title, otherStaticResources, nav, mainContent, footer)">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:replace="${title}">Page 1 Title</title>
+    <link href="/css/share/bootstrap.min.css" th:href="@{/css/share/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--    jquery ui-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <!-- Other javascript, css source files -->
+    <th:block th:replace="${otherStaticResources} ? ${otherStaticResources} : ~{}"></th:block>
+    <script type="text/javascript" src="/js/common.js" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+<section>
+    <nav th:if="${nav}" th:insert="${nav} ? ${nav}: ~{}">
+        <ul>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+        </ul>
+    </nav>
+    <article th:if="${mainContent}" th:insert="${mainContent} ? ${mainContent} : ~{}">
+        <h1>Page 1</h1>
+        <p>Main content of Page 1</p>
+    </article>
+    <div id="alert-box" class="alert-box" style="display:none;">
+        <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <p class="text-alert" id="text-alert"></p>
+    </div>
+</section>
+<footer th:if="${footer}" th:insert="${footer} ? ${footer} : ~{}">
+    <p>Footer</p>
+</footer>
+</body>
+</html>

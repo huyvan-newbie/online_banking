@@ -1,0 +1,64 @@
+body {
+    font-family: open sans, helvetica neue, Helvetica, Arial, sans-serif;
+    width: 100%;
+    background-color: #f9f5fa;
+    cursor: default;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 600px;
+    border-radius: 10px;
+    border: solid 1px lightgray;
+}
+
+.headingImg {
+    background-image: url("../images/withMoney.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5em 5em 5em 5em;
+    margin: 0 auto 0 auto;
+    width: 5em;
+    border-radius: 50%;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+form {
+    width: 300px;
+    margin: 0 0 0 85px;
+}
+
+.type-name {
+    text-align: left;
+    font-weight: bold;
+    margin: 20px ;
+}
+
+.col {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    margin: 30px auto;
+    width: 60%;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.form-control {
+    margin-left: 5px;
+}
+
+.btn {
+    margin: 30px 0 0 75px;
+}

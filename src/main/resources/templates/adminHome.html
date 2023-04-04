@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #admin-static-resources},
+                                                ~{:: #admin-nav},
+                                                ~{:: #admin-main-content},
+                                                ~{:: #admin-footer}
+                                               )}">
+
+<head>
+    <title>Admin Page</title>
+    <th:block id="admin-static-resources">
+        <script type="text/javascript" src="/js/admin.js" th:src="@{/js/admin.js}"></script>
+        <link rel="stylesheet" type="text/css" href="/css/admin.css" th:href="@{/css/admin.css}"/>
+    </th:block>
+</head>
+
+<body>
+<div id="admin-nav" th:replace="~{/fragments/admin-menu :: nav-admin}">
+    Admin Nav
+</div>
+<div class="container" id="admin-main-content">
+</div>
+</body>
+</html>

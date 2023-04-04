@@ -1,0 +1,113 @@
+.container {
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 80px;
+    font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-decoration: underline rebeccapurple;
+    text-underline-offset: 6px;
+}
+
+.btnLayout {
+    align-items: center;
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+
+.btnDiv {
+    margin: 20px;
+    display: inline-block;
+}
+
+.servicesBtn {
+    font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    align-items: center;
+    height: 155px;
+    width: 155px;
+    margin: 10px;
+    padding: 110px 0 5px 0;
+    background-color: #f9f5fa;
+    vertical-align: text-bottom;
+    border-radius: 15px;
+    border: none;
+    outline: 1px solid darkgrey;
+    text-align: center;
+}
+
+.servicesBtn:hover {
+    font-size: 18px;
+    padding: 57.5px 0 57.5px 0;
+    transition: 0.3s;
+    background-color: #f9f5fa;
+}
+
+#userBtn {
+    background-image: url("../images/user.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#viewBalanceBtn {
+    background-image: url("../images/viewBalance.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#depoMoneyBtn {
+    background-image: url("../images/depoMoney.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#withMoneyBtn {
+    background-image: url("../images/withMoney.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#transMoneyBtn {
+    background-image: url("../images/transMoney.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#saveMoneyBtn {
+    background-image: url("../images/saveMoney.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#loansMoneyBtn {
+    background-image: url("../images/loansMoney.png");
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -5px;
+}
+
+#userBtn:hover,
+#viewBalanceBtn:hover,
+#depoMoneyBtn:hover,
+#withMoneyBtn:hover,
+#transMoneyBtn:hover,
+#saveMoneyBtn:hover,
+#loansMoneyBtn:hover {
+    background-image: none;
+}

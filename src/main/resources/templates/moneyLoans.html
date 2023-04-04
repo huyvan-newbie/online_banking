@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #money-loans-resources},
+                                                ~{:: #money-loans-nav},
+                                                ~{:: #money-loans},
+                                                ~{:: #money-loans-footer}
+                                               )}">
+<meta charset="UTF-8">
+<title>Money Loans</title>
+<th:block id="money-loans-resources">
+    <script type="text/javascript" src="/js/loans-money.js"
+            th:src="@{/js/loans-money.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/loans-money.css}"
+          href="/css/loans-money.css"/>
+</th:block>
+</head>
+<body>
+<div id="money-loans" class="main-container container text-center">
+    <!--        Header-->
+    <div class="headingImg">
+    </div>
+
+    <div>
+        <h1>Loans</h1>
+    </div>
+
+    <!--        Hiện loans đã đăng ký-->
+    <div>
+        <h3 id="loansHistoryText">Transaction history</h3>
+    </div>
+
+    <div class="loanHistory">
+        <div class="loanParent" th:each="loanList : ${loansList}">
+            <div class="loanElement">
+                <div th:text="'Loams Package ID: ' + ${loanList.loansPackId}"></div>
+                <div th:text="'Loans Amount Taken: ' + ${loanList.loansAmountTaken} + '$'"></div>
+                <div th:text="'Loans Amount Repaid: ' + ${loanList.loansAmountRepaid} + '$'"></div>
+                <div th:text="'Date of payment: ' + ${loanList.dateOfPayment}"></div>
+                <div th:text="'Status: ' + ${loanList.status}"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--        Hiệu lên các loansPackage của ngân hàng -->
+    <form onsubmit="submitForm(event)">
+        <table>
+            <tr>
+                <input class="form-control" id="passwordBox" type='text' placeholder="Amount" name='amount' value=''/>
+            </tr>
+
+            <div class="loanPackages">
+                <tr class="loanParent" th:each="loanPackage : ${loansPackages}">
+                    <div class="loanElement" id="transactionElement" th:onclick="doSomething([[${loanPackage.id}]])">
+                        <div th:text="'Loams Package ID: ' + ${loanPackage.id}"></div>
+                        <div th:text="'Interest Rate: ' + ${loanPackage.interestRate} + '%'"></div>
+                        <div th:text="'Duration: ' + ${loanPackage.duration} + ' months'"></div>
+                    </div>
+                </tr>
+            </div>
+            <tr>
+                <div id="loansPackageId" th:text="'Loans Package ID: '"></div>
+                <input class="form-control" id="id" type="text" placeholder="ID" name="loansPackageID" value=''
+                       readonly>
+            </tr>
+        </table>
+
+        <tr>
+            <input class="btn btn-success" id="loginBtn" type="submit" name='submit' value='Confirm'/>
+        </tr>
+    </form>
+</div>
+</body>
+</html>

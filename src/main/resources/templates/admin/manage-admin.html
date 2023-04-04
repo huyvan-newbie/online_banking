@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #manage-admin-static-resources},
+                                                ~{:: #manage-admin-nav},
+                                                ~{:: #manage-admin-main-content},
+                                                ~{:: #manage-admin-footer}
+                                               )}">
+
+<head>
+    <title>Admin Page</title>
+    <th:block id="manage-admin-static-resources">
+        <link rel="stylesheet" type="text/css" href="/css/manage-admin.css" th:href="@{/css/manage-admin.css}"/>
+    </th:block>
+</head>
+<body>
+<div id="manage-admin-nav" th:replace="~{/fragments/admin-menu :: nav-admin}">
+    Admin Nav
+</div>
+<div class="container" id="manage-admin-main-content" style="margin-left: 300px">
+    <div class="row">
+        <div class="col-lg-10 mt-5 mb-5">
+            <div class="d-flex">
+                <h3 style="margin-right: auto">Admin list</h3>
+                <button>Add</button>
+            </div>
+            <table id="manage-admin-table" class="table table-bordered table-responsive" style="width: 100%">
+                <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>#</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/manage-admin.js" th:src="@{/js/manage-admin.js}"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/view-balance.css" th:href="@{/css/view-balance.css}"/>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="headingImg">
+        </div>
+
+        <h1>View Balance</h1>
+
+        <div class="col">
+            <p th:text="'Account Number: ' + ${account.accountNumber}"/>
+            <p th:text="'Valid Date: ' + ${account.activeDate}"/>
+            <p th:text="'Current balance: ' + ${account.currentBalance} + ' VNĐ'"/>
+        </div>
+    </div>
+
+</body>
+</html >

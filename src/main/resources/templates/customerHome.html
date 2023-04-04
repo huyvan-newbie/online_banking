@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #customer-static-resources},
+                                                ~{:: #customer-nav},
+                                                ~{:: #customer-main-content},
+                                                ~{:: #customer-footer}
+                                               )}">
+
+<head>
+    <title>Customer Page</title>
+    <th:block id="customer-static-resources">
+        <script type="text/javascript" src="/js/customer.js" th:src="@{/js/customer.js}"></script>
+        <link rel="stylesheet" type="text/css" href="/css/customer.css" th:href="@{/css/customer.css}"/>
+    </th:block>
+</head>
+<body>
+<div class="container" id="customer-main-content">
+    <h1>Services</h1>
+
+    <button class="btn btn-success" onclick="gotoUrl('/logout')">Logout</button>
+
+    <div class="btnLayout">
+        <div class="1stRow">
+            <div class="btnDiv" id="userDiv">
+                <button onclick="gotoUrl('/customer/profile')" class="servicesBtn" id="userBtn">User</button>
+            </div>
+
+            <div class="btnDiv" id="viewBalanceDiv">
+                <button onclick="gotoUrl('/customer/viewBalance')" class="servicesBtn" id="viewBalanceBtn">View Balance</button>
+            </div>
+
+            <div class="btnDiv" id="depoMoneyDiv">
+                <button onclick="gotoUrl('/customer/depositMoney')" class="servicesBtn" id="depoMoneyBtn">Deposit</button>
+            </div>
+
+            <div class="btnDiv" id="withMoneyDiv">
+                <button onclick="gotoUrl('/customer/withdrawMoney')" class="servicesBtn" id="withMoneyBtn">Withdraw</button>
+            </div>
+        </div>
+        <div class="2ndRow">
+            <div class="btnDiv" id="transMoneyDiv">
+                <button onclick="gotoUrl('/customer/transferMoney')" class="servicesBtn" id="transMoneyBtn">Transfer</button>
+            </div>
+
+            <div class="btnDiv" id="saveMoneyDiv">
+                <button onclick="gotoUrl('/customer/moneySaving')" class="servicesBtn" id="saveMoneyBtn">Saving</button>
+            </div>
+
+            <div class="btnDiv" id="loansMoneyDiv">
+                <button onclick="gotoUrl('/customer/moneyLoans')" class="servicesBtn" id="loansMoneyBtn">Loans</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

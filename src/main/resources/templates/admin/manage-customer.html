@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layouts/main-layout :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #manage-customer-static-resources},
+                                                ~{:: #manage-customer-nav},
+                                                ~{:: #manage-customer-main-content},
+                                                ~{:: #manage-customer-footer}
+                                               )}">
+
+<head>
+    <title>Admin Page</title>
+    <th:block id="manage-customer-static-resources">
+        <link rel="stylesheet" type="text/css" href="/css/manage-admin.css" th:href="@{/css/manage-admin.css}"/>
+    </th:block>
+</head>
+<body>
+<div id="manage-customer-nav" th:replace="~{/fragments/admin-menu :: nav-admin}">
+    Admin Nav
+</div>
+<div class="container" id="manage-customer-main-content" style="margin-left: 300px">
+    <div class="row">
+        <div class="col-lg-10 mt-5 mb-5">
+            <h3>Datatable using list of Objects in data parameter</h3>
+            <table id="manage-customer-table" class="table table-bordered table-responsive" style="width: 100%">
+                <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone number</th>
+                    <th>Email</th>
+                    <th>SSN</th>
+                    <th>Status</th>
+                    <th>#</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/manage-customer.js" th:src="@{/js/manage-customer.js}"></script>
+</div>
+</body>
+</html>

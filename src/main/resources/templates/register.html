@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/register.css}" href="/css/register.css"/>
+
+</head>
+
+<style>
+
+    html {
+        background-color: whitesmoke;
+        background-size: cover;
+        font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .fitICO {
+        float: left;
+        font-weight: bold;
+        font-size: 17px;
+        margin: 0 0 0 0;
+    }
+
+    #ico {
+        color: #05F63A;
+    }
+
+    h2 {
+        margin: 60px 0 0 0;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .greetingText {
+        display: inline-block;
+    }
+
+    .card {
+        display: block;
+        background-color: white;
+        width: 36em;
+        padding: 50px;
+        margin: 2em;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(145, 92, 182, .2);
+    }
+
+    .form-control {
+        background-color: whitesmoke;
+        font-size: 15px;
+        margin: 5px 0 25px 0;
+        padding: 7px;
+        width: 97.1%;
+        border-radius: 3px;
+        border: 1px solid gray;
+    }
+
+    .btn {
+
+        color: #fff;
+        background-color: #13aff0;
+        border: 1px solid #0e9fdc;
+        margin: 0 0 0 0;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        color: #e0e0e0;
+        background-color: #149ed9;
+        transition: 0.2s;
+    }
+
+</style>
+
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form th:action="@{/register/save}" th:object="${register}" method='POST'>
+                <div class="fitICO">
+                    <a id="fitSmart">FIT SMART BANKING</a>
+                    <a id="ico">ICO</a>
+                </div><br>
+
+                <h2 class="text-center text-primary">SIGN UP</h2>
+
+                <p class="greetingText">join the most advanced online banking system of the nation!</p>
+
+                <div class="form-group">
+                    <p>
+                    <label>Full Name</label><br>
+                    <input class="form-control" type="text" placeholder="E.g Nguyen Van A" th:field="*{fullName}">
+                    <p th:if="${#fields.hasErrors('fullName')}" th:errorclass="error" th:errors="*{fullName}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label>Email</label><br>
+                        <input class="form-control" type="text" placeholder="E.g abc@gmail.com" th:field="*{email}">
+                    <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label>User name</label><br>
+                        <input class="form-control" type="text" placeholder="E.g username" th:field="*{username}">
+                    <p th:if="${#fields.hasErrors('username')}" th:errorclass="error" th:errors="*{username}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label>Password</label><br>
+                        <input class="form-control" type="password" th:field="*{password}">
+                    <p th:if="${#fields.hasErrors('password')}" th:errorclass="error" th:errors="*{password}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                    <label>Social Security Number</label><br>
+                    <input class="form-control" type="text" th:field="*{ssn}">
+                    <p th:if="${#fields.hasErrors('ssn')}" th:errorclass="error" th:errors="*{ssn}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                    <label>Phone Number</label><br>
+                    <input class="form-control" type="text" th:field="*{phoneNumber}">
+                    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errorclass="error" th:errors="*{phoneNumber}"></p>
+                </div>
+
+
+                <div class="form-group">
+                    <p>
+                    <label>Street Address</label><br>
+                    <input class="form-control" type="text" th:field="*{streetAddress}">
+                    <p th:if="${#fields.hasErrors('streetAddress')}" th:errorclass="error" th:errors="*{streetAddress}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                    <label>City</label><br>
+                    <input class="form-control" type="text" th:field="*{city}">
+                    <p th:if="${#fields.hasErrors('city')}" th:errorclass="error" th:errors="*{city}"></p>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                    <label>District</label><br>
+                    <input class="form-control" type="text" th:field="*{district}">
+                    <p th:if="${#fields.hasErrors('district')}" th:errorclass="error" th:errors="*{district}"></p>
+                </div>
+
+                <div class="col">
+                    <button type="submit" class="btn btn-success">CREATE ACCOUNT</button>
+                </div>
+
+                <!--them nut sign in trong truong hop da co tai khoan r-->
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

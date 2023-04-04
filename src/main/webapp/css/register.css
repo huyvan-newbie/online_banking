@@ -1,0 +1,71 @@
+html {
+    background-color: whitesmoke;
+    background-size: cover;
+    font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.fitICO {
+    float: left;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 0 0 0;
+}
+
+#ico {
+    color: #05F63A;
+}
+
+h2 {
+    margin: 60px 0 0 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+.greetingText {
+    display: inline-block;
+}
+
+.card {
+    display: block;
+    background-color: white;
+    width: 36em;
+    padding: 50px;
+    margin: 2em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .2);
+}
+
+.form-control {
+    background-color: whitesmoke;
+    font-size: 15px;
+    margin: 5px 0 25px 0;
+    padding: 7px;
+    width: 97.1%;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+
+.btn {
+
+    color: #fff;
+    background-color: #13aff0;
+    border: 1px solid #0e9fdc;
+    margin: 0 0 0 0;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    color: #e0e0e0;
+    background-color: #149ed9;
+    transition: 0.2s;
+}
