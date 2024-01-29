@@ -1,13 +1,19 @@
-# online_banking
+# Online Banking System
+E-Banking System project for SE2 midterm.
 
-Thành viên trong nhóm:
-- Nguyễn Huy Văn
-- Nguyễn Quang Trung
-- Phạm Anh Tuấn
-- Lê Quang Hưng
-- Nguyễn Thành Nam
+## Description:
+This is a simple software made by our team
+with the purpose of creating a banking system website
+that has all the necessary features.
 
-Đây là projecj SE2 làm về E_Banking system
+### Features:
+- Create account.
+- ...
 
-Bắt đầu: T3, 21/2/2023
-Hạn: CN, 7/5/2023 23h59
+### Member:
+- Nguyễn Huy Văn.
+
+### Time:
+* Starting date:
+* Deadline:
+
